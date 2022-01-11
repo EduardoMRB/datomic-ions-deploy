@@ -97,10 +97,8 @@ function deploy {
     exit 1
   fi
 
-  waitUntilDeployed "$1_$SHA"
+  # waitUntilDeployed "$1_$SHA"
 }
 
-if [[ $SHA != $(get_version $COMPUTE_GROUP) ]]; then
-  push
-  deploy $COMPUTE_GROUP
-fi
+push
+deploy $COMPUTE_GROUP
